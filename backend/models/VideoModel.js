@@ -3,7 +3,7 @@ const mongoose=require("mongoose")
 const videoSchema=mongoose.Schema({
     videoUrl: {type:String, required:true},
     audioUrl: String,
-    recordedAt: {type:Date, required:true},
+    recordedAt: {type:String, required:true},
     user_id:{type:String, required:true}
 
 

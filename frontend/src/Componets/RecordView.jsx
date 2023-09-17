@@ -5,11 +5,11 @@ import { useReactMediaRecorder } from "react-media-recorder-2";
 const RecordView = () => {
 
   const { status, startRecording, stopRecording, mediaBlobUrl,} =
-    useReactMediaRecorder({ screen:true});
+    useReactMediaRecorder({  video:true,screen:true});
     const save= async()=>{
       if(mediaBlobUrl)
       {
-        const recordedTime=new Date();
+        const recordedTime = new Date().toLocaleString();
         const response= await fetch("http://localhost:8000/saved",{
           method: "POST",
           headers:{
