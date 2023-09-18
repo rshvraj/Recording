@@ -21,10 +21,11 @@ res.send("video ")
 })
 app.post("/saved", async(req,res)=>{
     const userID=req.userID
-    const{mediaBlobUrl,recordedTime}=req.body;
+    const{mediaBlobUrl,recordedTime,videoType}=req.body;
     const video=new VideoModel({
         videoUrl:mediaBlobUrl,
         recordedAt:recordedTime,
+        videoType:videoType,
         user_id:userID
     })
     await video.save();
